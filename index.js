@@ -3,7 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.get('/', function(request, response) {
-  response.send('Urban Lumber Company');
+  response.send('Welcome to Urban Lumber Company');
 });
 
 io.on('connection', function(socket) {
