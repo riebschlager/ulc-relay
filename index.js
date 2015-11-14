@@ -7,26 +7,20 @@ app.get('/', function(request, response) {
 });
 
 io.on('connection', function(socket) {
-  socket.on('deploy', function(msg) {
-    io.emit('deploy', msg);
+  socket.on('take-photo', function(msg) {
+    io.emit('take-photo', msg);
   });
-  socket.on('shutter', function(msg) {
-    io.emit('shutter', msg);
+  socket.on('take-photo-complete', function(msg) {
+    io.emit('take-photo-complete', msg);
   });
   socket.on('heartbeat', function(msg) {
     io.emit('heartbeat', msg);
   });
-  socket.on('snap', function(msg) {
-    io.emit('snap', msg);
-  });
   socket.on('complete', function(msg) {
     io.emit('complete', msg);
   });
-  socket.on('preview', function(msg) {
-    io.emit('preview', msg);
-  });
-  socket.on('preview-complete', function(msg) {
-    io.emit('preview-complete', msg);
+  socket.on('deploy', function(msg) {
+    io.emit('deploy', msg);
   });
   socket.on('shutdown', function(msg) {
     io.emit('shutdown', msg);
